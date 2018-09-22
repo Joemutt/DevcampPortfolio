@@ -7,4 +7,5 @@ end
 
 scope :ruby_on_rails_portfolio_items, -> { where(subtitle: 'Ruby on Rails') }
 
+after_initialize :set_defaults
 end
