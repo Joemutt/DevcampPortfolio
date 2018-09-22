@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
-10.times do |blog|
+3.times do |topic| 
+  Topic.create!( title: "Topic #{topic}")
+end
+
+puts "3 Topics created!"
+
+0.times do |blog|
   Blog.create!(
     title: "My Blog Post #{blog}",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -13,7 +19,7 @@
   )
 end
 
-puts '!0 blog post created!'
+puts '10 blog post created!'
 
 5.times do |skill|
   Skill.create!(
@@ -24,11 +30,27 @@ end
 
 puts '5 Skills Created!'
 
-9.times do |portfolio_item|
+8.times do |portfolio_item|
   Portfolio.create!(
     title: "My Porfolio #{portfolio_item}",
-    subtitle: 'My Portfolio Items',
-    body: '',
+    subtitle: "Ruby on Rails",
+    body: "There are many variations of passages of Lorem
+    Ipsum available, but the majority have suffered alteration 
+    in some form, by injected humour, or randomised words which don't look even slightly ",
+    main_image: 'https://placeholdit.co//i/600x400',
+    thumb_image: 'https://placeholdit.co//i/350x250'
+  )
+end
+
+
+
+1.times do |portfolio_item|
+  Portfolio.create!(
+    title: "My Porfolio #{portfolio_item}",
+    subtitle: 'Angular',
+    body: "There are many variations of passages of Lorem
+    Ipsum available, but the majority have suffered alteration 
+    in some form, by injected humour, or randomised words which don't look even slightly",
     main_image: 'https://placeholdit.co//i/600x400',
     thumb_image: 'https://placeholdit.co//i/350x250'
   )
