@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-3.times do |topic| 
-  Topic.create!( title: "Topic #{topic}")
+3.times do |topic|
+  Topic.create!(title: "Topic #{topic}")
 end
 
-puts "3 Topics created!"
+puts '3 Topics created!'
 
 0.times do |blog|
   Blog.create!(
@@ -33,23 +33,21 @@ puts '5 Skills Created!'
 8.times do |portfolio_item|
   Portfolio.create!(
     title: "My Porfolio #{portfolio_item}",
-    subtitle: "Ruby on Rails",
+    subtitle: 'Ruby on Rails',
     body: "There are many variations of passages of Lorem
-    Ipsum available, but the majority have suffered alteration 
+    Ipsum available, but the majority have suffered alteration
     in some form, by injected humour, or randomised words which don't look even slightly ",
     main_image: 'https://placeholdit.co//i/600x400',
     thumb_image: 'https://placeholdit.co//i/350x250'
   )
 end
 
-
-
 1.times do |portfolio_item|
   Portfolio.create!(
     title: "My Porfolio #{portfolio_item}",
     subtitle: 'Angular',
     body: "There are many variations of passages of Lorem
-    Ipsum available, but the majority have suffered alteration 
+    Ipsum available, but the majority have suffered alteration
     in some form, by injected humour, or randomised words which don't look even slightly",
     main_image: 'https://placeholdit.co//i/600x400',
     thumb_image: 'https://placeholdit.co//i/350x250'
@@ -57,3 +55,9 @@ end
 end
 
 puts '9 portfolios created!'
+
+3.times do |technology|
+  Portfolio.last.technologies.create!(name: "Technology #{technology}")
+end
+
+puts '3 technologies created!'
