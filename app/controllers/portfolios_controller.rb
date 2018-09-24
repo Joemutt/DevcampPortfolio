@@ -2,15 +2,16 @@
 
 class PortfoliosController < ApplicationController
   def index
-    @portfolio_items = Portfolio.all
+    @portfolio_items = Portfolio.ruby_on_rails_portfolio_items
   end
 
   def new
     @portfolio_item = Portfolio.new
+    3.times {@portfolio_item.technologies.build}
   end
 
   def create
-    @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body))
+    @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name]))
 
     respond_to do |format|
       if @portfolio_item.save
@@ -46,7 +47,7 @@ class PortfoliosController < ApplicationController
     @portfolio_item.destroy
 
     respond_to do |format|
-      format.html { redirect_to portfolios_path, notice: 'Record was successfully destroyed.' }    
+      format.html { redirect_to portfolios_path, notice: 'Record was successfully destroyed.' }
     end
   end
 end
